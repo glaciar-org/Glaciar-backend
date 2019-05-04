@@ -1,0 +1,19 @@
+###
+### mocha.opts
+###
+
+test/api-v1
+### --recursive
+### --inspect 
+
+### test/basic
+### --timeout 5000
+
+
+### ╰─mocha                                                                                                    130 ↵
+### Debugger listening on ws://127.0.0.1:9229/435b18bc-17ba-4d7a-a578-6048db19aa15
+### For help see https://nodejs.org/en/docs/inspector
+
+### La forma en que lo estoy utilizando es desde CLI $mocha --watch
+###  Y no lo dejo en mocha.opts al --watch porque me frena el CI/CD de Travis
+

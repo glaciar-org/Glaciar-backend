@@ -1,0 +1,33 @@
+{
+  "name": "upsala-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.5.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha --exit",
+    "test_local_ok": "mocha  --inspect-brk  ",
+    "test_travis_ok": "mocha --exit",
+    "test_default": "echo \"Error: no test specified\" && exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "json2csv": "^4.2.1",
+    "moment": "^2.22.2",
+    "mongoose": "^5.0.9",
+    "stdio": "^0.2.7"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.2.0"
+  }
+}

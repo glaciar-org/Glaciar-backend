@@ -1,0 +1,50 @@
+{
+    // Utilizar IntelliSense para aprender acerca de los posibles atributos.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos 
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // [PEI] My Favorite Config - [OK] Attach
+            "type": "node",
+            "request": "attach",
+            "name": "Upsala-backend attach",
+            "processId": "${command:PickProcess}"
+        },
+        {
+            // [PEI] My Favorite Config - [OK] Nodemon
+            "type": "node",
+            "request": "launch",
+            "name": "Upsala-backend nodemon",
+            "runtimeExecutable": "nodemon",
+            "program": "${workspaceFolder}/index.js",
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            // [PEI] My Favorite Config - [OK] Node
+            "type": "node",
+            "request": "launch",
+            "name": "Upsala-backend node",
+            "program": "${workspaceFolder}/index.js"
+        },
+        {
+            // [PEI] Mocha Tests [OK]
+            "type": "node",
+            "request": "launch",
+            "name": "Mocha Tests",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-u",
+                "tdd",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceFolder}/test"
+            ],
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+
+    ]
+}

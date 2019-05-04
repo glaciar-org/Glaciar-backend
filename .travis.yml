@@ -1,0 +1,39 @@
+language: node_js
+node_js:
+  - 9.0.0
+cache:
+  directories:
+    - "node_modules"
+branches:
+  only:
+    - master
+    - develop
+
+
+
+install: 
+  - npm install
+  - npm install -g mocha
+
+# script:
+#  - "node index.js"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_KEY_USER_GLACIAR_UPSALA
+  app: 
+    master: glaciar-upsala-backend
+    develop: glaciar-upsala-backend-dev
+  on:
+    repo: PabloEzequiel/GlaciaR-Upsala-backend
+
+notifications:
+  slack:
+    rooms:
+      secure: CLF9FW1Mslapb7RMQOxIdLlMv0cpGPjQxEUX1jAauOI19hlTVvTz/RtmGXaqrGRx+B4F8FPEmbRXJAWY8hs1KY/ytqmKrPzWR5VSL4Spk722VDqvA8R1Ryp4/2+DcPyxzeK2FzVjMd4zx8EgJIg0zk2KcOelW182CyUioDRLhh2pGxlT+1ZKVtwoGDykB+nTUt7dUXm0Tk/G7wR5VIlbgCrffwnArfsPRaV8B8av+M4zDn+o32MUQ5FsuN7bXLdes5+wEFJnoZnN//LGXt8kZZEWwLewGzvmRrIgHjT5nYauKS6VvIR0IsK3W5Db+6dL4YzWuRHDbFiAPu9izwIqr4UcSuXbN3jtl0OxL2IMjt2hsGqKNP2GYXob2Qs3/FgkkbGGkmurgqtLEEfJMbVUY8hPnwEdPwZLOLpc51t2G10mPlDOkuB+gj/MvczFrLIueKLT0yWzXg0ydm11stUOAKnJg2sxJoQYcyMlkZbuUM4WiVntep0fPw5YlktWDgXvrGtHw0steyy02ZEjaOrVviTAERe7uConMnVtGkMSsqWehi0hS6KlX9GL/2y+1CIqfXVLpIxttRvLaVl2cDhScMmiGn1naEWplJCWUrHutjDbgUX+b5epM5fe6gwUHQnB+DvrhVpPmv09yzGoZFL9sLg5NQlZgcFuSNm7HTlywqk=
+  email:
+    recipients: pablo.inchausti.edu@gmail.com
+    on_success: always
+    on_failure: always
+  
