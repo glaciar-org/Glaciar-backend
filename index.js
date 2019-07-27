@@ -6,19 +6,12 @@ var stdio = require('stdio')
 var cors = require('cors')
 var app = express()
 
-// require('dotenv').config({path: '~/.env'})
-// require('dotenv').config({path: './.env'})
-// require('dotenv').config({path: '.env'})
+require('dotenv').config({path: './.env'})
 
 // USO ROUTER
 var router = express.Router();
 
 var Global = require('./common/Global')
-
-const ENV = Global.getEnvFile();
-
-require('dotenv').config({path: ENV})
-
 var infoV1 = require('./controllers/v1/info')
 var infoV2 = require('./controllers/v2/info')
 var densiad = require('./controllers/v2/densidad')
