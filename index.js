@@ -6,9 +6,7 @@ var stdio = require('stdio')
 var cors = require('cors')
 var app = express()
 
-// require('dotenv').config({path: '~/.env'})
 require('dotenv').config({path: './.env'})
-// require('dotenv').config({path: '.env'})
 
 // USO ROUTER
 var router = express.Router();

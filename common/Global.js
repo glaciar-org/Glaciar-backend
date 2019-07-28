@@ -1,4 +1,5 @@
-var c = require('./Const')
+const c = require('./Const')
+const fs = require('fs')
 
 const getDatasetId = (dataset_id) => {
 
@@ -22,6 +23,35 @@ module.exports.isViedmaMongoDB = isViedmaMongoDB = () => (process.env.GlaciaR_DA
 module.exports.isUpsalaMongoDB = isUpsalaMongoDB = () => (process.env.GlaciaR_DATABASE_RELEASE || DATABASE_RELEASE_UPSALA) === DATABASE_RELEASE_UPSALA
 
 
+// const getEnvFile = () => {
+
+//   try {
+//     const PATH_env_docker = '/run/secrets/env_docker_file'
+//     if (fs.existsSync(PATH_env_docker)) {
+//         console.log(`config from: ${PATH_env_docker}`)
+//         return PATH_env_docker
+//     }
+//   } catch(err) {
+//     console.error('Error in getEnvFile(): ' + err)
+//   }
+
+//   try {
+//     const PATH_env_docker = '../Docker-Swarm/.env_docker'
+//     if (fs.existsSync(PATH_env_docker)) {
+//         console.log(`config from: ${PATH_env_docker}`)
+//         return PATH_env_docker
+//     }
+//   } catch(err) {
+//     console.error('Error in getEnvFile(): ' + err)
+//   }
+
+
+//   // Default config
+//   const PATH_env = './.env'
+//   console.log(`config from: ${PATH_env}`)
+//   return PATH_env
+
+// }
 
 const getMongoConfig = () => {
 
@@ -181,6 +211,7 @@ module.exports.isValidDataset = isValidDataset
 module.exports.getDatasetXParamas = getDatasetXParamas
 module.exports.getDatestNames = getDatestNames
 module.exports.getMongoConfig = getMongoConfig
+module.exports.getEnvFile = getEnvFile
 module.exports.isValidZoom = isValidZoom
 
 
