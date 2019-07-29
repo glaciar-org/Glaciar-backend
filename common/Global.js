@@ -211,7 +211,7 @@ module.exports.isValidDataset = isValidDataset
 module.exports.getDatasetXParamas = getDatasetXParamas
 module.exports.getDatestNames = getDatestNames
 module.exports.getMongoConfig = getMongoConfig
-module.exports.getEnvFile = getEnvFile
+// module.exports.getEnvFile = getEnvFile
 module.exports.isValidZoom = isValidZoom
 
 
