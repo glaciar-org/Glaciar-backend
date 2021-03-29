@@ -59,6 +59,15 @@ const getMongoConfig = () => {
             + ` [isUpsalaMongoDB= ${isUpsalaMongoDB()}  `
             + `  isViedmaMongoDB= ${isViedmaMongoDB()}] `)
 
+
+  const atlas_uri = process.env.GlaciaR_Viedma_backend__MONGODB_ATLAS_URI;
+
+  if (atlas_uri) {
+      console.log('getMongoConfig(Atlas MongoDB)= ', atlas_uri)
+
+      return atlas_uri
+  }
+  
   if (isViedmaMongoDB()) {
 
     const user = process.env.GlaciaR_Viedma_backend__MONGODB_MLAB_USER
